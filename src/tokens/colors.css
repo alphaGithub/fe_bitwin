@@ -1,0 +1,144 @@
+/*
+ * Color tokens — two layers:
+ *
+ * 1. PALETTE: named colors (blue, green, grey, red, yellow). Change a color here and it updates
+ *    everywhere it's used. Usable directly: `bg-blue-600`, `text-grey-700`, `border-green-500`.
+ *
+ * 2. SEMANTIC: meaning-based names (primary, neutral, success, …) that point at a palette color.
+ *    Prefer these in components so re-branding is a one-line change (e.g. primary → green).
+ *
+ * Values are space-separated RGB channels (#2563EB → 37 99 235) so Tailwind opacity modifiers
+ * work: `bg-blue-600/40`.
+ */
+:root {
+  /* ───────────── 1. Palette ───────────── */
+
+  --color-white: 255 255 255;
+  --color-black: 0 0 0;
+
+  --color-blue-50: 239 246 255;
+  --color-blue-100: 219 234 254;
+  --color-blue-200: 191 219 254;
+  --color-blue-300: 147 197 253;
+  --color-blue-400: 96 165 250;
+  --color-blue-500: 59 130 246;
+  --color-blue-600: 37 99 235;
+  --color-blue-700: 29 78 216;
+  --color-blue-800: 30 64 175;
+  --color-blue-900: 30 58 138;
+
+  --color-green-50: 240 253 244;
+  --color-green-100: 220 252 231;
+  --color-green-200: 187 247 208;
+  --color-green-300: 134 239 172;
+  --color-green-400: 74 222 128;
+  --color-green-500: 34 197 94;
+  --color-green-600: 22 163 74;
+  --color-green-700: 21 128 61;
+  --color-green-800: 22 101 52;
+  --color-green-900: 20 83 45;
+
+  --color-grey-50: 249 250 251;
+  --color-grey-100: 243 244 246;
+  --color-grey-200: 229 231 235;
+  --color-grey-300: 209 213 219;
+  --color-grey-400: 156 163 175;
+  --color-grey-500: 107 114 128;
+  --color-grey-600: 75 85 99;
+  --color-grey-700: 55 65 81;
+  --color-grey-800: 31 41 55;
+  --color-grey-900: 17 24 39;
+
+  --color-red-50: 254 242 242;
+  --color-red-100: 254 226 226;
+  --color-red-200: 254 202 202;
+  --color-red-300: 252 165 165;
+  --color-red-400: 248 113 113;
+  --color-red-500: 239 68 68;
+  --color-red-600: 220 38 38;
+  --color-red-700: 185 28 28;
+  --color-red-800: 153 27 27;
+  --color-red-900: 127 29 29;
+
+  --color-yellow-50: 255 251 235;
+  --color-yellow-100: 254 243 199;
+  --color-yellow-200: 253 230 138;
+  --color-yellow-300: 252 211 77;
+  --color-yellow-400: 251 191 36;
+  --color-yellow-500: 245 158 11;
+  --color-yellow-600: 217 119 6;
+  --color-yellow-700: 180 83 9;
+  --color-yellow-800: 146 64 14;
+  --color-yellow-900: 120 53 15;
+
+  /* ───────────── 2. Semantic (point at the palette) ───────────── */
+
+  --color-primary-50: var(--color-blue-50);
+  --color-primary-100: var(--color-blue-100);
+  --color-primary-200: var(--color-blue-200);
+  --color-primary-300: var(--color-blue-300);
+  --color-primary-400: var(--color-blue-400);
+  --color-primary-500: var(--color-blue-500);
+  --color-primary-600: var(--color-blue-600);
+  --color-primary-700: var(--color-blue-700);
+  --color-primary-800: var(--color-blue-800);
+  --color-primary-900: var(--color-blue-900);
+
+  --color-neutral-0: var(--color-white);
+  --color-neutral-50: var(--color-grey-50);
+  --color-neutral-100: var(--color-grey-100);
+  --color-neutral-200: var(--color-grey-200);
+  --color-neutral-300: var(--color-grey-300);
+  --color-neutral-400: var(--color-grey-400);
+  --color-neutral-500: var(--color-grey-500);
+  --color-neutral-600: var(--color-grey-600);
+  --color-neutral-700: var(--color-grey-700);
+  --color-neutral-800: var(--color-grey-800);
+  --color-neutral-900: var(--color-grey-900);
+
+  --color-success-50: var(--color-green-50);
+  --color-success-100: var(--color-green-100);
+  --color-success-500: var(--color-green-500);
+  --color-success-600: var(--color-green-600);
+  --color-success-700: var(--color-green-700);
+
+  --color-warning-50: var(--color-yellow-50);
+  --color-warning-100: var(--color-yellow-100);
+  --color-warning-500: var(--color-yellow-500);
+  --color-warning-600: var(--color-yellow-600);
+  --color-warning-700: var(--color-yellow-700);
+
+  --color-error-50: var(--color-red-50);
+  --color-error-100: var(--color-red-100);
+  --color-error-500: var(--color-red-500);
+  --color-error-600: var(--color-red-600);
+  --color-error-700: var(--color-red-700);
+
+  --color-info-50: var(--color-blue-50);
+  --color-info-100: var(--color-blue-100);
+  --color-info-500: var(--color-blue-500);
+  --color-info-600: var(--color-blue-600);
+  --color-info-700: var(--color-blue-700);
+
+  /* Surfaces & text */
+  --color-background: var(--color-neutral-0);
+  --color-surface: var(--color-neutral-50);
+  --color-surface-muted: var(--color-neutral-100);
+  --color-foreground: var(--color-neutral-900);
+  --color-foreground-muted: var(--color-neutral-500);
+  --color-border: var(--color-neutral-200);
+  --color-border-strong: var(--color-neutral-300);
+  --color-ring: var(--color-primary-500);
+}
+
+:root[data-theme="dark"],
+.dark {
+  --color-background: var(--color-neutral-900);
+  --color-surface: var(--color-neutral-800);
+  --color-surface-muted: var(--color-neutral-700);
+  --color-foreground: var(--color-neutral-50);
+  --color-foreground-muted: var(--color-neutral-400);
+  --color-border: var(--color-neutral-700);
+  --color-border-strong: var(--color-neutral-600);
+  --color-ring: var(--color-primary-400);
+}

@@ -1,0 +1,49 @@
+# ─────────────────────────────────────────────────────────────
+# NOTE: dist/ is intentionally COMMITTED — consumers install this
+# repo over git SSH and npm does not build git dependencies for us.
+# Do not add dist/ here.
+# ─────────────────────────────────────────────────────────────
+
+# Dependencies
+node_modules/
+
+# Build & tool output (other than dist/)
+storybook-static/
+coverage/
+*.tsbuildinfo
+*.tgz
+.vite/
+.cache/
+.eslintcache
+.stylelintcache
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+build-storybook.log
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+.npmrc
+
+# Editors & IDEs
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local Claude Code settings (shared .claude/settings.json is fine to commit)
+.claude/settings.local.json

@@ -1,0 +1,11 @@
+/* Import once in the consuming app's root (e.g. `import "@bitwin/ui/tokens/css/base.css"`). */
+@import "./colors.css";
+@import "./typography.css";
+@import "./effects.css";
+
+:root {
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}

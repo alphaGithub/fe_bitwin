@@ -1,0 +1,18 @@
+/*
+ * Typography tokens. A consuming app may override --font-sans / --font-display (e.g. via next/font).
+ */
+:root {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: var(--font-sans);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --text-display-size: 3rem;    --text-display-leading: 3.5rem;   --text-display-weight: 700;
+  --text-h1-size: 2.25rem;      --text-h1-leading: 2.75rem;       --text-h1-weight: 700;
+  --text-h2-size: 1.875rem;     --text-h2-leading: 2.375rem;      --text-h2-weight: 600;
+  --text-h3-size: 1.5rem;       --text-h3-leading: 2rem;          --text-h3-weight: 600;
+  --text-h4-size: 1.25rem;      --text-h4-leading: 1.75rem;       --text-h4-weight: 600;
+  --text-body-lg-size: 1.125rem; --text-body-lg-leading: 1.75rem; --text-body-lg-weight: 400;
+  --text-body-size: 1rem;       --text-body-leading: 1.5rem;      --text-body-weight: 400;
+  --text-body-sm-size: 0.875rem; --text-body-sm-leading: 1.25rem; --text-body-sm-weight: 400;
+  --text-caption-size: 0.75rem; --text-caption-leading: 1rem;     --text-caption-weight: 400;
+}
