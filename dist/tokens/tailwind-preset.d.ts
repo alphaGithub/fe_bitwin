@@ -6,6 +6,9 @@ declare const preset: {
             colors: {
                 white: string;
                 black: string;
+                brand: {
+                    [k: string]: string;
+                };
                 blue: {
                     [k: string]: string;
                 };

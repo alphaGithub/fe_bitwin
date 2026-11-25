@@ -19,4 +19,9 @@ describe("Card", () => {
     render(<Card variant="elevated">x</Card>);
     expect(screen.getByTestId("card")).toHaveClass("shadow-md");
   });
+  it("exposes sub-parts via dot notation", () => {
+    expect(Card.Header).toBe(CardHeader);
+    expect(Card.Content).toBe(CardContent);
+    expect(Card.Footer).toBe(CardFooter);
+  });
 });

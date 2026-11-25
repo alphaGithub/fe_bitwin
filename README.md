@@ -57,8 +57,8 @@ Style with the token-backed Tailwind classes (`bg-primary-600`, `text-foreground
 ## Tokens
 
 - `src/tokens/colors.css` has two layers. Values are RGB channels (`--color-blue-600: 37 99 235`), so opacity modifiers like `bg-blue-600/40` work.
-  - **Palette:** named colours `blue`, `green`, `grey`, `red` and `yellow` (50–900), plus `white` and `black`. Use them directly: `bg-blue-600`, `text-grey-700`, or `var(--color-green-500)` in CSS.
-  - **Semantic:** `primary` → blue, `neutral` → grey, `success` → green, `warning` → yellow, `error` → red, `info` → blue, plus `background`, `surface`, `foreground`, `border` and `ring` (with dark-mode overrides). Prefer these in components. To rebrand, repoint `--color-primary-*` to another palette colour.
+  - **Palette:** named colours `brand` (built around #4764cd), `blue`, `green`, `grey`, `red` and `yellow` (50–900), plus `white` and `black`. Use them directly: `bg-blue-600`, `text-grey-700`, or `var(--color-green-500)` in CSS.
+  - **Semantic:** `primary` → brand, `neutral` → grey, `success` → green, `warning` → yellow, `error` → red, `info` → blue, plus `background`, `surface`, `foreground`, `border` and `ring` (with dark-mode overrides). Prefer these in components. To rebrand, repoint `--color-primary-*` to another palette colour.
 - `src/tokens/typography.css` holds font families and the type scale (`display`, `h1`–`h4`, `body-lg`, `body`, `body-sm`, `caption`).
 - `src/tokens/effects.css` holds radii, shadows and durations.
 - `src/tokens/tailwind-preset.ts` maps all of the above to Tailwind theme keys.

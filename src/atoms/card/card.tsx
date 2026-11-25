@@ -9,7 +9,7 @@ export type CardProps = HTMLAttributes<HTMLDivElement> &
     "data-testid"?: string;
   };
 
-export const Card = forwardRef<HTMLDivElement, CardProps>(
+const CardRoot = forwardRef<HTMLDivElement, CardProps>(
   ({ variant, padding, interactive, className, "data-testid": testId, ...props }, ref) => (
     <div
       ref={ref}
@@ -19,7 +19,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
     />
   )
 );
-Card.displayName = "Card";
+CardRoot.displayName = "Card";
 
 export type CardHeaderProps = Omit<HTMLAttributes<HTMLDivElement>, "title"> & {
   title?: ReactNode;
@@ -57,3 +57,13 @@ export const CardFooter = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivEleme
   )
 );
 CardFooter.displayName = "CardFooter";
+
+/**
+ * Surface container. Sub-parts are available both ways:
+ * `<Card.Header />` or the named `CardHeader` export.
+ */
+export const Card = Object.assign(CardRoot, {
+  Header: CardHeader,
+  Content: CardContent,
+  Footer: CardFooter,
+});

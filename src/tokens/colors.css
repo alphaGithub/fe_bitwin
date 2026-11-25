@@ -1,7 +1,7 @@
 /*
  * Color tokens — two layers:
  *
- * 1. PALETTE: named colors (blue, green, grey, red, yellow). Change a color here and it updates
+ * 1. PALETTE: named colors (brand, blue, green, grey, red, yellow). Change a color here and it updates
  *    everywhere it's used. Usable directly: `bg-blue-600`, `text-grey-700`, `border-green-500`.
  *
  * 2. SEMANTIC: meaning-based names (primary, neutral, success, …) that point at a palette color.
@@ -15,6 +15,18 @@
 
   --color-white: 255 255 255;
   --color-black: 0 0 0;
+
+  /* Brand — built around #4764cd (600). 50 (#eff2fa) and 200 (#c8d1f0) are the existing brand tints. */
+  --color-brand-50: 239 242 250;
+  --color-brand-100: 227 232 248;
+  --color-brand-200: 200 209 240;
+  --color-brand-300: 172 185 232;
+  --color-brand-400: 126 146 220;
+  --color-brand-500: 93 119 211;
+  --color-brand-600: 71 100 205;
+  --color-brand-700: 60 85 174;
+  --color-brand-800: 50 70 144;
+  --color-brand-900: 39 55 113;
 
   --color-blue-50: 239 246 255;
   --color-blue-100: 219 234 254;
@@ -73,16 +85,16 @@
 
   /* ───────────── 2. Semantic (point at the palette) ───────────── */
 
-  --color-primary-50: var(--color-blue-50);
-  --color-primary-100: var(--color-blue-100);
-  --color-primary-200: var(--color-blue-200);
-  --color-primary-300: var(--color-blue-300);
-  --color-primary-400: var(--color-blue-400);
-  --color-primary-500: var(--color-blue-500);
-  --color-primary-600: var(--color-blue-600);
-  --color-primary-700: var(--color-blue-700);
-  --color-primary-800: var(--color-blue-800);
-  --color-primary-900: var(--color-blue-900);
+  --color-primary-50: var(--color-brand-50);
+  --color-primary-100: var(--color-brand-100);
+  --color-primary-200: var(--color-brand-200);
+  --color-primary-300: var(--color-brand-300);
+  --color-primary-400: var(--color-brand-400);
+  --color-primary-500: var(--color-brand-500);
+  --color-primary-600: var(--color-brand-600);
+  --color-primary-700: var(--color-brand-700);
+  --color-primary-800: var(--color-brand-800);
+  --color-primary-900: var(--color-brand-900);
 
   --color-neutral-0: var(--color-white);
   --color-neutral-50: var(--color-grey-50);

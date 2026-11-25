@@ -16,6 +16,7 @@ var preset = {
         // Palette — named colors, overriding Tailwind's built-in blue/green/red/yellow with ours.
         white: rgb("white"),
         black: rgb("black"),
+        brand: scale("brand", FULL),
         blue: scale("blue", FULL),
         green: scale("green", FULL),
         grey: scale("grey", FULL),
@@ -84,4 +85,4 @@ var tailwind_preset_default = preset;
 
 
 exports.tailwind_preset_default = tailwind_preset_default;
-//# sourceMappingURL=chunk-CT33ZHCD.js.map
+//# sourceMappingURL=chunk-4JCYG35Z.js.map

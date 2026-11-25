@@ -1,6 +1,6 @@
 import {
   tailwind_preset_default
-} from "../chunk-2JNHZ7GJ.mjs";
+} from "../chunk-RYK7XU4J.mjs";
 export {
   tailwind_preset_default as tailwindPreset
 };

@@ -1,7 +1,7 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true});
 
-var _chunkCT33ZHCDjs = require('../chunk-CT33ZHCD.js');
+var _chunk4JCYG35Zjs = require('../chunk-4JCYG35Z.js');
 
 
-exports.default = _chunkCT33ZHCDjs.tailwind_preset_default;
+exports.default = _chunk4JCYG35Zjs.tailwind_preset_default;
 //# sourceMappingURL=tailwind-preset.js.map

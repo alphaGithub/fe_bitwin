@@ -34,6 +34,7 @@ const preset = {
         // Palette — named colors, overriding Tailwind's built-in blue/green/red/yellow with ours.
         white: rgb("white"),
         black: rgb("black"),
+        brand: scale("brand", FULL),
         blue: scale("blue", FULL),
         green: scale("green", FULL),
         grey: scale("grey", FULL),
@@ -81,6 +82,11 @@ const preset = {
       },
       keyframes: {
         "fade-in": { from: { opacity: "0" }, to: { opacity: "1" } },
+        "accordion-down": { from: { height: "0" }, to: { height: "var(--radix-accordion-content-height)" } },
+        "accordion-up": { from: { height: "var(--radix-accordion-content-height)" }, to: { height: "0" } },
+        "dialog-in": { from: { opacity: "0", transform: "translate(-50%, -48%) scale(0.97)" }, to: { opacity: "1", transform: "translate(-50%, -50%) scale(1)" } },
+        "drawer-in-right": { from: { transform: "translateX(100%)" }, to: { transform: "translateX(0)" } },
+        "pop-in": { from: { opacity: "0", transform: "scale(0.96)" }, to: { opacity: "1", transform: "scale(1)" } },
         "progress-indeterminate": {
           "0%": { left: "-33%" },
           "100%": { left: "100%" },
@@ -88,6 +94,11 @@ const preset = {
       },
       animation: {
         "fade-in": "fade-in var(--duration-fast) ease-out",
+        "accordion-down": "accordion-down var(--duration-normal) ease-out",
+        "accordion-up": "accordion-up var(--duration-normal) ease-out",
+        "dialog-in": "dialog-in var(--duration-normal) ease-out",
+        "drawer-in-right": "drawer-in-right var(--duration-normal) ease-out",
+        "pop-in": "pop-in var(--duration-fast) ease-out",
         "progress-indeterminate": "progress-indeterminate 1.2s ease-in-out infinite",
       },
       transitionDuration: {
