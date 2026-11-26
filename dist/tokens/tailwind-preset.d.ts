@@ -120,6 +120,50 @@ declare const preset: {
                         opacity: string;
                     };
                 };
+                "accordion-down": {
+                    from: {
+                        height: string;
+                    };
+                    to: {
+                        height: string;
+                    };
+                };
+                "accordion-up": {
+                    from: {
+                        height: string;
+                    };
+                    to: {
+                        height: string;
+                    };
+                };
+                "dialog-in": {
+                    from: {
+                        opacity: string;
+                        transform: string;
+                    };
+                    to: {
+                        opacity: string;
+                        transform: string;
+                    };
+                };
+                "drawer-in-right": {
+                    from: {
+                        transform: string;
+                    };
+                    to: {
+                        transform: string;
+                    };
+                };
+                "pop-in": {
+                    from: {
+                        opacity: string;
+                        transform: string;
+                    };
+                    to: {
+                        opacity: string;
+                        transform: string;
+                    };
+                };
                 "progress-indeterminate": {
                     "0%": {
                         left: string;
@@ -131,6 +175,11 @@ declare const preset: {
             };
             animation: {
                 "fade-in": string;
+                "accordion-down": string;
+                "accordion-up": string;
+                "dialog-in": string;
+                "drawer-in-right": string;
+                "pop-in": string;
                 "progress-indeterminate": string;
             };
             transitionDuration: {

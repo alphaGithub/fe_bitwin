@@ -28,3 +28,18 @@ export const WithActions: Story = {
     ),
   },
 };
+
+export const Banner: Story = {
+  args: { variant: "banner", tone: "primary", title: "New:", children: "Bulk upload is now available for all sellers.", onDismiss: fn() },
+  decorators: [(Story) => <div className="w-[48rem]"><Story /></div>],
+};
+export const DarkBanner: Story = {
+  args: {
+    variant: "banner",
+    tone: "dark",
+    title: "Your trial ends in 3 days",
+    children: undefined,
+    actions: <Button size="sm" variant="secondary">Upgrade</Button>,
+  },
+  decorators: [(Story) => <div className="w-[48rem]"><Story /></div>],
+};

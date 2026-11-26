@@ -19,4 +19,11 @@ describe("Alert", () => {
     const { container } = render(<Alert icon={false}>No icon</Alert>);
     expect(container.querySelector("svg")).toBeNull();
   });
+  it("renders the banner variant full-width", () => {
+    render(<Alert variant="banner" tone="dark" title="Sale ends tonight">Up to 50% off</Alert>);
+    const banner = screen.getByRole("status");
+    expect(banner).toHaveClass("border-b", "bg-grey-900");
+    expect(banner).not.toHaveClass("rounded-lg");
+    expect(banner).toHaveTextContent("Sale ends tonight");
+  });
 });

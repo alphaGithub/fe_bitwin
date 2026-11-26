@@ -74,7 +74,7 @@ export const Steps = forwardRef<HTMLOListElement, StepsProps>(
             !!onStepClick && !step.disabled && (allowSkipAhead || status === "complete" || status === "current");
 
           const indicator = (
-            <span className={stepIndicatorVariants({ status, size })}>
+            <span className={cn(stepIndicatorVariants({ status, size }), clickable && "group-hover:ring-4 group-hover:ring-primary-100")}>
               {step.icon ??
                 (status === "complete" ? (
                   <Check aria-hidden="true" strokeWidth={3} className={iconSize} />
@@ -131,7 +131,7 @@ export const Steps = forwardRef<HTMLOListElement, StepsProps>(
                   onClick={() => onStepClick?.(index)}
                   className={cn(
                     wrapperClass,
-                    "rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring [&:hover_span[class*=rounded-full]]:ring-4 [&:hover_span[class*=rounded-full]]:ring-primary-100"
+                    "group rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                   )}
                 >
                   {body}

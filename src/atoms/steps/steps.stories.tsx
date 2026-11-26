@@ -23,17 +23,17 @@ export const Horizontal: Story = {};
 export const Vertical: Story = { args: { orientation: "vertical" } };
 export const Small: Story = { args: { size: "sm" } };
 export const WithError: Story = { args: { current: 2, steps: steps.map((s, i) => (i === 2 ? { ...s, status: "error" as const, description: "Payment failed" } : s)) } };
-export const Interactive: Story = {
-  render: (args) => {
-    const [current, setCurrent] = useState(0);
-    return (
-      <div className="space-y-6">
-        <Steps {...args} current={current} onStepClick={setCurrent} />
-        <div className="flex justify-between">
-          <Button variant="outline" disabled={current === 0} onClick={() => setCurrent((c) => c - 1)}>Back</Button>
-          <Button disabled={current === steps.length - 1} onClick={() => setCurrent((c) => c + 1)}>Next</Button>
-        </div>
+function InteractiveSteps(args: React.ComponentProps<typeof Steps>) {
+  const [current, setCurrent] = useState(0);
+  return (
+    <div className="space-y-6">
+      <Steps {...args} current={current} onStepClick={setCurrent} />
+      <div className="flex justify-between">
+        <Button variant="outline" disabled={current === 0} onClick={() => setCurrent((c) => c - 1)}>Back</Button>
+        <Button disabled={current === steps.length - 1} onClick={() => setCurrent((c) => c + 1)}>Next</Button>
       </div>
-    );
-  },
-};
+    </div>
+  );
+}
+
+export const Interactive: Story = { render: (args) => <InteractiveSteps {...args} /> };

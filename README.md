@@ -29,14 +29,22 @@ src/
 
 | Group | Atoms |
 |---|---|
-| Typography & visuals | `Text`, `Heading`, `Icon` (wraps any `lucide-react` icon), `Link` |
-| Actions | `Button` |
-| Form controls | `Label`, `Input`, `Textarea`, `Checkbox`, `RadioGroup` + `Radio`, `Switch`, `Select` |
-| Feedback | `Badge`, `Alert`, `Spinner`, `Skeleton`, `Progress` |
-| Layout | `Box`, `Stack`, `Flex`, `Container`, `Divider`, `Card` (+ `CardHeader`, `CardContent`, `CardFooter`) |
-| Display & overlays | `Avatar`, `Tooltip` (+ `TooltipProvider`), `Tag` |
+| Typography & visuals | `Text`, `Heading`, `Icon` (wraps any `lucide-react` icon), `Link`, `TruncatedText` |
+| Actions | `Button`, `ButtonGroup`, `CopyButton` |
+| Form controls | `Label`, `Input`, `PasswordInput`, `SearchInput`, `NumberInput`, `OTPInput`, `TagInput`, `Textarea`, `Checkbox`, `RadioGroup` + `Radio`, `Switch`, `Select` |
+| Selection | `Chip`, `ChipGroup` (single/multiple), `SegmentedControl`, `Rating` |
+| Navigation | `Tabs`, `Breadcrumb`, `Steps`, `Accordion` |
+| Feedback | `Badge`, `CountBadge`, `StatusDot`, `Alert` (inline or `banner`), `Spinner`, `Skeleton`, `Progress` |
+| Layout | `Box`, `Stack`, `Flex` + `Flex.Item`, `Flexbox` (Alfred-compatible), `Container`, `Divider`, `Card` |
+| Display & overlays | `Avatar`, `Timeline`, `Tooltip`, `Tag`, `Dialog` (modal or side drawer), `DropdownMenu` |
 
-Shared helpers live in `src/lib/`: `field-variants.ts` (common look for Input, Textarea and Select) and `layout-variants.ts` (gap, padding and alignment scale for the layout atoms).
+**Sub-components** work both ways: `Card.Header` or `CardHeader`, `Flex.Item` or `FlexItem`. The same goes for `Tabs.List/Trigger/Content`, `Accordion.Item/Trigger/Content` and `Dialog.Close`.
+
+**Columns:** `Flex.Item colspan={1–24}` sizes items on a 24-column grid and accounts for the parent's `gap`, so two `colspan={12}` items always fit on one row. Also available: `offset`, `grow`, `shrink`, `basis` and `order`.
+
+**Migrating from Alfred:** `Flexbox` accepts Alfred's props (`justify="space-between"`, `align="middle"`, `gutter`, `mt`/`mb`, `nowrap`) using Alfred's 4/8/12/16/24px spacing. Screens can switch imports first and move to `Flex` later. Use `Flex` for new code.
+
+Shared helpers live in `src/lib/`: `field-variants.ts` (common look for Input, Textarea and Select), `layout-variants.ts` (the spacing scale), `use-controllable-state.ts` (controlled/uncontrolled values) and `field-icon-button.tsx` (clickable icons inside fields).
 
 ### Component conventions
 

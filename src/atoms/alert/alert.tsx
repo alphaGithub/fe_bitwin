@@ -14,6 +14,8 @@ const defaultIcons: Record<NonNullable<AlertProps["tone"]>, LucideIcon> = {
   warning: AlertTriangle,
   error: AlertCircle,
   neutral: Info,
+  primary: Info,
+  dark: Info,
 };
 
 export type AlertProps = Omit<HTMLAttributes<HTMLDivElement>, "title"> &
@@ -29,32 +31,47 @@ export type AlertProps = Omit<HTMLAttributes<HTMLDivElement>, "title"> &
   };
 
 export const Alert = forwardRef<HTMLDivElement, AlertProps>(
-  ({ tone, title, icon, onDismiss, actions, className, children, "data-testid": testId, ...props }, ref) => {
+  ({ tone, variant, title, icon, onDismiss, actions, className, children, "data-testid": testId, ...props }, ref) => {
     const DefaultIcon = defaultIcons[tone ?? "info"];
     const isUrgent = tone === "error" || tone === "warning";
+    const isBanner = variant === "banner";
 
     return (
       <div
         ref={ref}
         role={isUrgent ? "alert" : "status"}
-        className={cn(alertVariants({ tone }), className)}
+        className={cn(alertVariants({ tone, variant }), className)}
         data-testid={testId ?? `alert-${tone ?? "info"}`}
         {...props}
       >
         {icon !== false && (
-          <span className="mt-0.5 shrink-0">{icon ?? <DefaultIcon aria-hidden="true" className="h-5 w-5" />}</span>
+          <span className={cn("shrink-0", !isBanner && "mt-0.5")}>
+            {icon ?? <DefaultIcon aria-hidden="true" className={isBanner ? "h-4 w-4" : "h-5 w-5"} />}
+          </span>
         )}
-        <div className="min-w-0 flex-1 space-y-1">
-          {title && <p className="text-body-sm font-semibold">{title}</p>}
-          {children && <div className="text-body-sm opacity-90">{children}</div>}
-          {actions && <div className="flex flex-wrap gap-2 pt-2">{actions}</div>}
-        </div>
+        {isBanner ? (
+          <div className="flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1 text-body-sm">
+            {title && <span className="font-semibold">{title}</span>}
+            {children && <span className="opacity-90">{children}</span>}
+            {actions && <span className="flex flex-wrap gap-2">{actions}</span>}
+          </div>
+        ) : (
+          <div className="min-w-0 flex-1 space-y-1">
+            {title && <p className="text-body-sm font-semibold">{title}</p>}
+            {children && <div className="text-body-sm opacity-90">{children}</div>}
+            {actions && <div className="flex flex-wrap gap-2 pt-2">{actions}</div>}
+          </div>
+        )}
         {onDismiss && (
           <button
             type="button"
             onClick={onDismiss}
             aria-label="Dismiss"
-            className="-m-1 h-7 w-7 shrink-0 rounded-md p-1 opacity-70 transition-opacity hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className={cn(
+              "-m-1 h-7 w-7 shrink-0 rounded-md p-1 opacity-70 transition-opacity hover:opacity-100",
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+              isBanner && "absolute right-3 top-1/2 m-0 -translate-y-1/2"
+            )}
           >
             <X aria-hidden="true" className="h-5 w-5" />
           </button>
